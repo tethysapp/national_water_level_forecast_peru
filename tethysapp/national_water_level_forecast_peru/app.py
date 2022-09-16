@@ -87,11 +87,11 @@ class NationalWaterLevelForecastPeru(TethysAppBase):
                 url='get-time-series-bc',
                 controller='national_water_level_forecast_peru.controllers.get_time_series_bc'
             ),
-            UrlMap(
-                name='get_observed_water_level_csv',
-                url='get-observed-water-level-csv',
-                controller='national_water_level_forecast_peru.controllers.get_observed_water_level_csv'
-            ),
+            #UrlMap(
+            #    name='get_observed_water_level_csv',
+            #    url='get-observed-water-level-csv',
+            #    controller='national_water_level_forecast_peru.controllers.get_observed_water_level_csv'
+            #),
             UrlMap(
                 name='get_simulated_bc_water_level_csv',
                 url='get-simulated-bc-water-level-csv',
