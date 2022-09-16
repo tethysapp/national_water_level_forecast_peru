@@ -201,6 +201,8 @@ function get_hydrographs (watershed, subbasin, streamcomid, stationcode, oldstat
                 	'yaxis.autorange': true
                 });
 
+                /*
+
                 var params_obs = {
                     watershed: watershed,
                 	subbasin: subbasin,
@@ -215,6 +217,7 @@ function get_hydrographs (watershed, subbasin, streamcomid, stationcode, oldstat
                 });
 
                 $('#download_observed_water_level').removeClass('hidden');
+                */
 
                 var params_sim_bc = {
                     watershed: watershed,
