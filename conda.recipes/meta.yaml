@@ -1,0 +1,48 @@
+{% set data = load_setup_py_data(setup_file='../setup.py', from_recipe_dir=True) %}
+{% set name = data.get('name')|replace("tethysapp-", "")|lower %}
+
+package:
+  name: {{ name }}
+  version: {{ data.get('version') }}
+
+about:
+  author: {{ data.get('author')}}
+  description: {{ data.get('description')}}
+  license: "{'name': 'release_package', 'version': '1.1', 'description': 'This app uses the Bias Correction, the GESS forecast, and the observed water level to create a  National Hydrological Forecast Model in Peru.', 'long_description': '', 'author': 'Darlly Judith Rojas-Lesmes, Jorge Luis Sanchez-Lozano', 'author_email': 'djrojasl@unal.edu.co, jorgessanchez7@gmail.com', 'url': '', 'license': ''}"
+  dev_url: {{ data.get('url') }}
+
+outputs:
+  - name: {{ name }}
+extra:
+  author_email: djrojasl@unal.edu.co, jorgessanchez7@gmail.com
+  keywords:
+  - Hydrology
+  - Time Series
+  - Bias Correction
+  - Hydrostats
+  - GEOGloWS
+  - Water Level
+  - Peru
+  recipe-maintainers:
+  - TethysAppWarehouse
+
+build:
+  noarch: python
+  preserve_egg_dir: true
+  script: python setup.py install --record=record.txt
+requirements:
+  build:
+  - python
+  run:
+  - geoglows
+  - hydrostats
+  - pandas
+  - requests
+  - plotly
+  - numpy
+  - scipy
+  - hs_restclient
+  - bs4
+  - lxml
+source:
+  path: ..
