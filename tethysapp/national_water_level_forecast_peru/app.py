@@ -8,7 +8,7 @@ class NationalWaterLevelForecastPeru(TethysAppBase):
 
     name = 'National Water Level Forecast Peru'
     index = 'national_water_level_forecast_peru:home'
-    icon = 'national_water_level_forecast_peru/images/peru_logo.png'
+    icon = 'national_water_level_forecast_peru/images/national_water_level_forecast_peru.jpeg'
     package = 'national_water_level_forecast_peru'
     root_url = 'national-water-level-forecast-peru'
     color = '#27ae60'
@@ -107,6 +107,15 @@ class NationalWaterLevelForecastPeru(TethysAppBase):
                 url='get-forecast-ensemble-bc-data-csv',
                 controller='national_water_level_forecast_peru.controllers.get_forecast_ensemble_bc_data_csv'
             ),
+            ########################################
+            ########################################
+            UrlMap(
+                name="get_zoom_array",
+                url="get-zoom-array",
+                controller="national_water_level_forecast_peru.controllers.get_zoom_array",
+            ),
+            ########################################
+            ########################################
         )
 
         return url_maps
